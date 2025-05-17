@@ -1,0 +1,634 @@
+{
+  "active": false,
+  "connections": {
+    "Create Contact": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Contacts",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update Contact": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Contacts",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Labels": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Mail",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Mail",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Draft": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Mail",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Label Emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Mail",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Reply": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Mail",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Mail",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Calendar MCP",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Calendar MCP",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Events": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Calendar MCP",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Calendar MCP",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event with Attendee": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Calendar MCP",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-24T13:07:58.895Z",
+  "id": "JlVyeeoGtF78Lo10",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "MCP Goole Calendar",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "path": "calendar"
+      },
+      "id": "68a98c56-6191-4be9-9477-148e83d2d56c",
+      "name": "Google Calendar MCP",
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "position": [
+        -500,
+        -60
+      ],
+      "webhookId": "f9d9d5ea-6f83-42c8-ae50-ee6c71789bca",
+      "typeVersion": 1,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "kx0d3IcAm5fcI5BZ",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "path": "mail"
+      },
+      "id": "be976659-f7d5-4a79-9048-a754728b4e27",
+      "name": "Google Mail",
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "position": [
+        80,
+        -360
+      ],
+      "webhookId": "f9d9d5ea-6f83-42c8-ae50-ee6c71789bca",
+      "typeVersion": 1,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "kx0d3IcAm5fcI5BZ",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "path": "contacts"
+      },
+      "id": "4ff91ad2-479c-4f84-a3bb-14ebb42c753e",
+      "name": "Google Contacts",
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "position": [
+        -820,
+        -420
+      ],
+      "webhookId": "f9d9d5ea-6f83-42c8-ae50-ee6c71789bca",
+      "typeVersion": 1,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "kx0d3IcAm5fcI5BZ",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "familyName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Family_Name', ``, 'string') }}",
+        "givenName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Given_Name', ``, 'string') }}",
+        "additionalFields": {
+          "addressesUi": {
+            "addressesValues": {
+              "streetAddress": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Street_Address', ``, 'string') }}",
+              "city": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('City', ``, 'string') }}",
+              "region": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Region', ``, 'string') }}",
+              "countryCode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Country_Code', ``, 'string') }}",
+              "postalCode": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Postal_Code', ``, 'string') }}",
+              "type": "work"
+            }
+          },
+          "birthday": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Birthday', ``, 'string') }}",
+          "emailsUi": {
+            "emailsValues": [
+              {
+                "type": "work",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Value', ``, 'string') }}"
+              }
+            ]
+          },
+          "phoneUi": {
+            "phoneValues": [
+              {
+                "type": "mobile",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Value', ``, 'string') }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        -200
+      ],
+      "id": "6040a049-50a3-464b-8241-6d69f49d391d",
+      "name": "Create Contact",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "c7vxeiQsriijQXLi",
+          "name": "Google Contacts account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Contact_ID', ``, 'string') }}",
+        "fields": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fields', ``, 'string') }}",
+        "updateFields": {}
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        -200
+      ],
+      "id": "85e89621-3898-43ac-95c1-169ae59f82d7",
+      "name": "update Contact",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "c7vxeiQsriijQXLi",
+          "name": "Google Contacts account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Google MCP Nodes\nklickt jede note einmal an für die Goolge zugänge.\n\n## Optional aber empfohlen: \nerstellt Header Auth credentials. Zum absichern der verbindung\n\nfür die nutzung muss dieser Workflow Aktiv sein.",
+        "height": 480,
+        "width": 420
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1340,
+        -440
+      ],
+      "typeVersion": 1,
+      "id": "f9e2ac2c-b795-4b6d-a442-466d9d535575",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -160,
+        -120
+      ],
+      "id": "e7e78ba9-e639-4b88-b87b-866fb7f21c3e",
+      "name": "Send Email",
+      "webhookId": "63b5fba3-018f-4d5c-a807-fdda7a3003bb",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "raMmClkPHbsLQKJ5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ $fromAI(\"limit\",\"how many emails the user wants\") }}",
+        "simple": false,
+        "filters": {
+          "sender": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sender', `who the emails are from`, 'string') }}"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        320,
+        -120
+      ],
+      "id": "5ded4710-edab-4c96-8a8a-e47ecc4c73dd",
+      "name": "Get Emails",
+      "webhookId": "63190dc7-39a7-48f0-9472-529d906684ac",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "raMmClkPHbsLQKJ5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "emailType": "html",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To_Email', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        200,
+        -120
+      ],
+      "id": "9bd5e55d-62a7-4a17-8915-4087a3c390df",
+      "name": "Create Draft",
+      "webhookId": "3f6a5be6-b10e-44c5-b236-df5cac738859",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "raMmClkPHbsLQKJ5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', `the message ID`, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        -40,
+        -120
+      ],
+      "id": "425d920e-c4c7-4ded-ba06-c642fe458305",
+      "name": "Email Reply",
+      "webhookId": "5134751d-d300-43cf-984c-3821b6336ed1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "raMmClkPHbsLQKJ5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "label",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        -120
+      ],
+      "id": "ed936c9c-a48f-4190-8cbc-4625c2097d97",
+      "name": "Get Labels",
+      "webhookId": "844ef4cd-6169-41d9-adb6-ae39058dc4f6",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "raMmClkPHbsLQKJ5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', `the ID of the message`, 'string') }}",
+        "labelIds": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Label_Names_or_IDs', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        80,
+        -120
+      ],
+      "id": "c275bfae-111e-47ee-b924-29717ceecd37",
+      "name": "Label Emails",
+      "webhookId": "0947aa2b-6fe0-4114-bba6-719d9b5be49d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "raMmClkPHbsLQKJ5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "joerg.lischewski@gmail.com",
+          "mode": "list",
+          "cachedResultName": "joerg.lischewski@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('attendees0_Attendees', ``, 'string') }}"
+          ],
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -40,
+        180
+      ],
+      "id": "9aa46253-c2bc-4485-9c5e-095914d7ecbd",
+      "name": "Create Event with Attendee",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "LAEqE0qV1pG45d76",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "joerg.lischewski@gmail.com",
+          "mode": "list",
+          "cachedResultName": "joerg.lischewski@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "attendees": [],
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -180,
+        180
+      ],
+      "id": "285eea6f-0ee7-4421-9507-525d33cc5416",
+      "name": "Create Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "LAEqE0qV1pG45d76",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "joerg.lischewski@gmail.com",
+          "mode": "list",
+          "cachedResultName": "joerg.lischewski@gmail.com"
+        },
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', `the day before the date the user requested`, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', `the day after the date the user requested`, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -320,
+        180
+      ],
+      "id": "b4a36a17-4d21-48df-9822-284e05cdcd06",
+      "name": "Get Events",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "LAEqE0qV1pG45d76",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "joerg.lischewski@gmail.com",
+          "mode": "list",
+          "cachedResultName": "joerg.lischewski@gmail.com"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -460,
+        180
+      ],
+      "id": "5ea07643-07ba-439b-944a-eab6d2ae62fa",
+      "name": "Delete Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "LAEqE0qV1pG45d76",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "joerg.lischewski@gmail.com",
+          "mode": "list",
+          "cachedResultName": "joerg.lischewski@gmail.com"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "updateFields": {
+          "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+          "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -600,
+        180
+      ],
+      "id": "89f8767e-a156-465c-881d-09d3650eaad4",
+      "name": "Update Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "LAEqE0qV1pG45d76",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "repo_name": "AdA-Workflows",
+  "repo_owner": "tham0nk",
+  "repo_path": "workflows",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-04-24T13:08:01.788Z",
+      "updatedAt": "2025-04-24T13:08:01.788Z",
+      "id": "yzmVrlTUmlUTF0AT",
+      "name": "mcp"
+    },
+    {
+      "createdAt": "2025-04-24T13:08:04.385Z",
+      "updatedAt": "2025-04-24T13:08:04.385Z",
+      "id": "wurdl9hDy3CxBcSH",
+      "name": "google"
+    },
+    {
+      "createdAt": "2025-04-24T13:08:11.560Z",
+      "updatedAt": "2025-04-24T13:08:11.560Z",
+      "id": "iNj0BTDiTK4uJUb6",
+      "name": "kalendar"
+    },
+    {
+      "createdAt": "2025-05-17T07:46:37.555Z",
+      "updatedAt": "2025-05-17T07:46:37.555Z",
+      "id": "gVwe8N6kt4iEVxRy",
+      "name": "public"
+    }
+  ],
+  "triggerCount": 3,
+  "updatedAt": "2025-05-17T07:46:39.026Z",
+  "versionId": "a4f6c4d5-5602-4219-ade0-2ad531d828ae"
+}
